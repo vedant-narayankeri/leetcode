@@ -11,6 +11,3 @@
 
 ## Core Concept
 {CORE_CONCEPT}
-
-## Approach
-{APPROACH}
