@@ -1,41 +1,38 @@
-# Problem 1: Two Sum
+# Problem 1929: Concatenation of Array
 
 ## Problem Description
-Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+Given an integer array nums of length n, you want to create an array ans of length 2n where ans[i] == nums[i] and ans[i + n] == nums[i] for 0 <= i < n (0-indexed).
 
-You may assume that each input would have exactly one solution, and you may not use the same element twice.
+Specifically, ans is the concatenation of two nums arrays.
 
-You can return the answer in any order.
+Return the array ans.
 
 ## Examples
 
 Example 1:
 ```text
-Input: nums = [2,7,11,15], target = 9
-Output: [0,1]
-Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+Input: nums = [1,2,1]
+Output: [1,2,1,1,2,1]
+Explanation: The array ans is formed as follows:
+- ans = [nums[0],nums[1],nums[2],nums[0],nums[1],nums[2]]
+- ans = [1,2,1,1,2,1]
 ```
 
 Example 2:
 ```text
-Input: nums = [3,2,4], target = 6
-Output: [1,2]
-```
-
-Example 3:
-```text
-Input: nums = [3,3], target = 6
-Output: [0,1]
+Input: nums = [1,3,2,1]
+Output: [1,3,2,1,1,3,2,1]
+Explanation: The array ans is formed as follows:
+- ans = [nums[0],nums[1],nums[2],nums[3],nums[0],nums[1],nums[2],nums[3]]
+- ans = [1,3,2,1,1,3,2,1]
 ```
 
 ## Constraints
 
-- `2 <= nums.length <= 10^4`
-- `-10^9 <= nums[i] <= 10^9`
-- `-10^9 <= target <= 10^9`
-- Only one valid answer exists.
+- `n == nums.length`
+- `1 <= n <= 1000`
+- `1 <= nums[i] <= 1000`
 
 ## Core Concept
-Try to find if target - currnentNumber exists.
-Store Map of Number, Index
-So we can search target-currentNumber in O(1)
+Simply iterate array and create result array of size `2*nums.length`
+Insert data at index `i` and `nums+i`
