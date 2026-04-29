@@ -33,4 +33,5 @@ Then - we compare the character at same index for each of the strings of the arr
 Base case - Also by default if all characters match then we return the first string - as all strings of list are the same
 Normal flow - 
 On occurrance of different character we break and return s.substring(0,i) -> from 0 to i-1
+We also break if we reach and index equal to lenght of shorter string of comparison - as that can be max answer
 If no characters match s.substring(0,0) is from 0 to -1 which returns `""` empty string
