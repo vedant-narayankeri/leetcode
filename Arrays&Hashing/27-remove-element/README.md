@@ -34,7 +34,15 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 - `0 <= val <= 100`
 
 ## Core Concept
-Essentially we iterate over `nums` array and also keep and `index` pointer
+Essentially we iterate over `nums` array and also keep and `index` pointer (place where next valid element goes to override `nums` array)
 We re-assign `nums[index]` whenever `nums[i] != val`, this means that we are doing inplace replacement for array
 And from index -> 0 to index 
 Need to return `index` value which is equal to number of elements that are not target val - that's what needs to be returned (elements of use left after so-called removal)
+
+Idea -  "we can overwrite unwanted elements in place"
+
+Intuition: (From Neetcode)
+Instead of using extra space, we can overwrite unwanted elements in place.
+We use a write pointer k that tracks where the next valid element should go.
+As we scan through the array, whenever we find an element that is not equal to val, we write it at position k and move k forward.
+At the end, everything before index k contains valid elements.
