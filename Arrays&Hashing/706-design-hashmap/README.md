@@ -49,6 +49,7 @@ myHashMap.get(2);    // return -1 (i.e., not found), The map is now [[1,1]]
     - Set `arr[k] -> v`, where k is key and v is value
     - Space Complexity = O(10^6) - Max value of key
     - Time Complexity = O(1) simpel just set/reset value
+    - Also do Arrays.fill(map, -1) as if doesn't exit we return -1
     - Note:  Create array of index MAX_SIZE+1 as we have zero indexing
 
 - Optimized
