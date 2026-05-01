@@ -59,3 +59,9 @@ myHashMap.get(2);    // return -1 (i.e., not found), The map is now [[1,1]]
     - Hash based on key
         - If collision but key is different then add new node
         - If collission and same key, just update value
+    - Return -1 if key not found
+    - Note - Don't forget node = node.next while iterating linked list of bucket as it is to be done in each method to be implemented
+    - Time Complexity
+        - Max O(N) -> if all elements in same bucket
+        - Avg -> O(N/k) - Answer as we assume data is well distributed
+    - Space Complexity: O(k+M) where k is MAX_SIZE = 10^4 and M is number of entries in the map
