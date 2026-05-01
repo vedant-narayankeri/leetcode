@@ -90,3 +90,6 @@ We have to traverse linked list = O(N) - Worst case all elements inserted in sam
 IF well distributed -? O(N/k) - k is number of buckets (Average case)
 
 Space Complexity = O(k+m) where k = bucket storage and m is num of unique keys
+
+Final note - simple apporach of creating array of 10^6 max numbers
+In this case we just store boolean 0, 1 if contains (check if value is 1), add (update value to 1), remove (update value to 0)
