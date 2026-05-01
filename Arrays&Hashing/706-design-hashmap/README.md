@@ -42,3 +42,18 @@ myHashMap.get(2);    // return -1 (i.e., not found), The map is now [[1,1]]
 - At most `10^4` calls will be made to add, remove, and contains.
 
 ## Core Concept
+
+- Brute Force
+    - Create array of 10^6 elements
+    - Set `-1` as default value indicating key doesn't exit
+    - Set `arr[k] -> v`, where k is key and v is value
+    - Space Complexity = O(10^6) - Max value of key
+    - Time Complexity = O(1) simpel just set/reset value
+
+- Optimized
+    - Linked List similar to problem no. 705
+    - Buckets array of Nodes
+    - Each Node -> key, value, next
+    - Hash based on key
+        - If collision but key is different then add new node
+        - If collission and same key, just update value
