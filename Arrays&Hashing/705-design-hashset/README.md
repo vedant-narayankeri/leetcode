@@ -54,3 +54,39 @@ Time Complexity - O(N) for each operation (managed by core libs)
 Space Complexity = O(N)
 
 With List we don't have to worry about last index
+
+Optimized - Like and actual HashSet (Linked List implementation)
+
+Node - key, value 
+
+Node[] buckets = new Node[10^4];//Max number of operations, can add max 10^4 operations
+
+HashFunction - Index of buckets = key%10000
+
+Constructor:
+Initialize buckets[i] = new Node(0);//Just default can be any value as we don't count the first element of node which is head.
+
+- Add
+    - Go to bucket index
+    - while(node.next !=null) basic iteration
+    - If match then return
+    - Default once we reach last node
+    - node.next = new Node(key)
+- Contains
+    - Go to bucket index
+    - Default return false
+    - while(node.next!=null) -> retrun true; //if(node.next.value = key)
+        - Default node = node.next; // Keep going ahead
+- Remove
+    - Go to bucket index
+    - While(node.next != null) - basic iteration
+    - Iterate till next node of current node  is key to remove
+    - When next node is to remove, node.next = node.next.next
+    - Else just keep going ahead - node = node.next;
+
+Time complexity
+
+We have to traverse linked list = O(N) - Worst case all elements inserted in same bucket
+IF well distributed -? O(N/k) - k is number of buckets (Average case)
+
+Space Complexity = O(k+m) where k = bucket storage and m is num of unique keys
