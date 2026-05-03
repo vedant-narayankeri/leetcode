@@ -27,3 +27,18 @@ Explanation: After sorting the array, the positions of some numbers are not chan
 - `-5 * 10^4 <= nums[i] <= 5 * 10^4`
 
 ## Core Concept
+Merge Sort
+- O(N*logN) -> merge 2 sorted list O(N) (both pointers reach end, one move fix per iteration)
+- We do merging log(N) times as we split array into half and keep merging recursively
+- 2 Main functions - mergeSort(arr, left, right) & merge(arr, left, mid, right)
+- mergeSort()
+    - We calculate mid and then recursively call mergeSort(arr, left, mid) and mergeSort(arr, mid+1, right)
+    - Once left, right splits are sorted then we call merge(arr, left, mid, right)
+    - Base case: if array size = 0 or 1 ie. left>=right we just return no need to sort as is single element
+    - int mid = (left+right)/2 - floor operation it is fine
+- merge()
+    - while loop till we reach end of one of the arrays
+    - Outside while loop we iterate for both remaining arrays (if condition if i<=mid, j<=r)
+    - 3 pointer approach i, j for 2 parts to be merged and k for temp array for filling it
+    - In-place copy to replace temp with nums (we can do manually also but fine)
+        - System.arraycopy(source, sourcePos, dest, destPos, temp.length)
