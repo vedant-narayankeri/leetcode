@@ -28,3 +28,11 @@ Output: [1,2]
 - It is guaranteed that the answer is unique.
 
 ## Core Concept
+
+- We calculate frequency of each integer put in map() -> k is number v is frequency
+- Then we group integers with same frequency and store in List<Integer>[] buckets
+- So buckets[i] -> all numbers with `i` frequency and buckets[i+1] with `i+1` frequency
+- So all numbers part of higher index buckets have higher frequencies
+- Note
+    - List<Integer>[] array fo list of integers is `buckets`
+    - buckets -> size should be nums.length+1 as it is 0 index and max freq = size of nums i.e. when all nubmers are same
